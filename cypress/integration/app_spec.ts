@@ -1,19 +1,37 @@
+var faker = require('faker');
+
 describe("User Form", function() {
-  it("submits a user", function() {
+  const userSubmit = () => {
     cy.visit("/");
+    const firstName = faker.name.firstName();
+    const lastName = faker.name.lastName();
+    const address = faker.address.streetAddress();
+
     cy.contains("First Name").click();
-    cy.focused().type("Alice");
+    cy.focused().type(firstName);
 
     cy.contains("Last Name").click();
-    cy.focused().type("Aardvark");
+    cy.focused().type(lastName);
 
     cy.contains("Address").click();
-    cy.focused().type("123 Example St, Phoenix, AZ 85018");
+    cy.focused().type(address);
 
     cy.contains("button", "Submit").click();
 
-    cy.contains("First Name: Alice");
-    cy.contains("Last Name: Aardvark");
-    cy.contains("Address: 123 Example St, Phoenix, AZ 85018");
-  }); 
+    cy.contains(`First Name: ${firstName}`);
+    cy.contains(`Last Name: ${lastName}`);
+    cy.contains(`Address: ${address}`);
+  }
+
+  it("submits a user", function() {
+    userSubmit();
+  });
+
+  it("submits multiple users", function() {
+    userSubmit();
+
+    userSubmit();
+
+    userSubmit();
+  });
 });
