@@ -6,7 +6,9 @@ describe("User Form", function() {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const address = faker.address.streetAddress();
-
+    
+    cy.contains("Open User Form").click();
+    
     cy.contains("First Name").click();
     cy.focused().type(firstName);
 
