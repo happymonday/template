@@ -15,38 +15,51 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <form>
-        <label htmlFor="first-name">First Name</label>
-        <input 
-          type="text" 
-          placeholder="First Name" 
-          id="first-name" 
-          value={user.firstName} 
-          onChange={e => setUser({...user, firstName: e.target.value})}
-        />
-        <br/>
+        <div className="field">
+          <label htmlFor="first-name" className="label">First Name</label>
+          <div className="control">
+            <input 
+              type="text" 
+              placeholder="First Name" 
+              id="first-name"
+              className="input"
+              value={user.firstName} 
+              onChange={e => setUser({...user, firstName: e.target.value})}
+            />
+          </div>
+        </div>
 
-        <label htmlFor="last-name">Last Name</label>
-        <input 
-          type="text" 
-          placeholder="Last Name" 
-          id="last-name" 
-          value={user.lastName} 
-          onChange={e => setUser({...user, lastName: e.target.value})}
-        />
-        <br/>
+        <div className="field">
+          <label htmlFor="last-name" className="label">Last Name</label>
+          <div className="control">
+            <input 
+              type="text" 
+              placeholder="Last Name" 
+              id="last-name"
+              className="input"
+              value={user.lastName} 
+              onChange={e => setUser({...user, lastName: e.target.value})}
+            />
+          </div>
+        </div>
 
-        <label htmlFor="address">Address</label>
-        <input 
-          type="text" 
-          placeholder="Address" 
-          id="address" 
-          value={user.address} 
-          onChange={e => setUser({...user, address: e.target.value})}
-        />
+        <div className="field">
+          <label htmlFor="address" className="label">Address</label>
+          <div className="control">
+            <input 
+              type="text" 
+              placeholder="Address" 
+              id="address" 
+              className="input"
+              value={user.address} 
+              onChange={e => setUser({...user, address: e.target.value})}
+            />
+          </div>
+        </div>
 
-        <button onClick={(e) => {e.preventDefault(); handleSubmit(); }} type="button">Submit</button>
+        <button className="button is-primary" onClick={(e) => {e.preventDefault(); handleSubmit(); }} type="button">Submit</button>
       </form>
 
       {formSubmitted ? (
@@ -59,7 +72,7 @@ const App: React.FC = () => {
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 }
 
