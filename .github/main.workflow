@@ -1,6 +1,6 @@
 workflow "Build and Test" {
   on = "push"
-  resolves = ["Run integration tests"]
+  resolves = ["Run cypress tests"]
 }
 
 action "Install dependencies" {
