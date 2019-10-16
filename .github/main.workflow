@@ -14,7 +14,7 @@ action "Build app" {
   runs = "npm run build"
 }
 
-action "Run integration tests" {
+action "Run cypress tests" {
   uses = "docker://circleci/node:8-browsers"
   needs = "Build app"
   runs = "npm run cypress:run"
