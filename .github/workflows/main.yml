@@ -1,6 +1,9 @@
 name: Build and Test
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - "master"
 
 jobs:
   buildAndTest:
@@ -15,6 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        env:
+          CYPRESS_INSTALL_BINARY: 0
 
       - name: Build app
         run: npm run build
