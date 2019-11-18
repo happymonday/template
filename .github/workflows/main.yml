@@ -16,6 +16,14 @@ jobs:
         with:
           node-version: 10.15.3
 
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node_modules-
+
       - name: Install dependencies
         run: npm install
         env:
