@@ -40,6 +40,6 @@
     "@types/faker": "^4.1.6",
     "cypress": "^3.6.1",
     "bulma": "^0.7.4",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.0"
   }
 }
