@@ -37,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "@types/faker": "^4.1.6",
+    "@types/faker": "^4.1.7",
     "cypress": "^3.6.1",
     "bulma": "^0.8.0",
     "node-sass": "^4.13.0"
