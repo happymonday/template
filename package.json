@@ -6,7 +6,7 @@
     "@types/jest": "24.0.23",
     "@types/node": "12.12.12",
     "@types/react": "16.9.13",
-    "@types/react-dom": "16.9.2",
+    "@types/react-dom": "16.9.4",
     "faker": "^4.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
